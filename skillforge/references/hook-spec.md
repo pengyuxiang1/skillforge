@@ -31,13 +31,13 @@ Stage 4 门禁 hook 的实现依据。**动手前必读三个坑，每个都会�
 | **Claude Code** | `https://code.claude.com/docs/zh-CN/hooks`<br>（**加 `.md` 后缀**可得纯 markdown，省 token） | 项目 `.claude/settings.json`<br>用户 `~/.claude/settings.json` | JSON |
 | **Codex** | `https://learn.chatgpt.com/docs/hooks`<br>（**加 `.md` 后缀**可得纯 markdown） | 用户 `~/.codex/hooks.json` 或 `~/.codex/config.toml`<br>项目 `<repo>/.codex/hooks.json` 或 `.codex/config.toml` | **JSON 或 TOML**（两种都支持，同一层别混用） |
 
-### 第二步：优先查官网，官网不通就用本地快照
+### 第二步：查官方文档（写 hook 前必做）
 
 **查询顺序**：
 
 1. 打开上面对应 Agent 的官方文档（优先加 `.md` 后缀，拿纯 markdown）
-2. 官网不可访问 → 读本地快照 `references/hooks-ref/{agent}.md`（抓取于 2026-09-14）
-3. 地址失效就 `web_search` 搜「`<Agent名> hooks 官方文档`」
+2. 地址不可访问 → `web_search` 搜「`<Agent名> hooks 官方文档`」
+3. 把关键页（事件列表 / matcher 语义 / 输入输出 schema / 废弃说明）**抓下来存进本仓库 `references/hooks-ref/`**，作为你的本地快照（见该目录 README）
 4. 按**该 Agent 的语法**写，写完在本机跑一次验证（模拟输入，看返回值）
 
 **为什么必须查**（都是实测踩过的）：
@@ -63,15 +63,9 @@ Stage 4 门禁 hook 的实现依据。**动手前必读三个坑，每个都会�
 
 > ⚠️ 本 skill 的**具体代码示例**以 CodeBuddy 为准（实测过）。给其他 Agent 写时，**结构可以照搬，语法必须按目标文档改写并验证**。
 
-### 本地快照（官网不通时的兜底）
+### 本地快照（你自己的兜底）
 
-`references/hooks-ref/` 下有三份 2026-09-14 抓取的副本：
-
-| 文件 | 对应 Agent | 规模 | 备注 |
-|------|-----------|------|------|
-| `codebuddy.md` | CodeBuddy | 770 行 | 从 VitePress HTML 提取 |
-| `claude-code.md` | Claude Code | 3400 行 | **用 HTML 标题**（`<h2 id=...>`），`grep '<h2'` 定位章节 |
-| `codex.md` | Codex | 1129 行 | 含 Matcher patterns / input / output / Schemas 全章节 |
+`references/hooks-ref/` 初始只含说明文档：官方文档快照因版权与时效原因**不随仓库分发**，需要时按上面第二步自行抓取存入。三家建议各存一份 `{agent}.md`，断网时兜底。
 
 ## 一、什么时候需要 hook
 
@@ -126,9 +120,9 @@ matchesTool(matcher, name) {
 
 **错误**：在脚本里写 IDE 的工具名（`write_to_file` / `replace_in_file`）。
 
-**验证**：
+**验证**（以 CodeBuddy CLI 为例，路径按你的安装方式调整）：
 ```bash
-cd ~/.nvm/versions/node/v*/lib/node_modules/@tencent-ai/codebuddy-code/dist
+cd <你的 codebuddy CLI 安装目录>/dist
 grep -c 'write_to_file' codebuddy.js    # → 0，不存在
 ```
 

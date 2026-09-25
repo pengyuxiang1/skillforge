@@ -168,7 +168,7 @@ hook 设计的性能纪律（不达标 = 不合格）：
 
 ⚠️ **实现前必做两件事**：
 
-1. **确认目标 Agent**（Stage 0 已问），并**查该 Agent 的官方 hook 文档**（优先官网，不通则读 `references/hooks-ref/` 本地快照）。三家语法不通用，字段也会废弃——照记忆写出来的配置可能被静默忽略。地址见 `references/hook-spec.md` 第零节
+1. **确认目标 Agent**（Stage 0 已问），并**查该 Agent 的官方 hook 文档**（地址见 `references/hook-spec.md` 第零节；建议抓取关键页存入 `references/hooks-ref/` 作本地兜底）。三家语法不通用，字段也会废弃——照记忆写出来的配置可能被静默忽略
 2. **读 `references/hook-spec.md`**，里面有三个真实踩过的坑（工具名、matcher 锚点、废弃 API），每个都会导致"门禁看起来在工作、实际从未生效"
 
 要点：
@@ -241,7 +241,7 @@ skillforge/references/cases/{skill-name}.md   # 案例沉淀（Stage 5 判定）
 - `references/stage-design.md` — 状态拆解方法论（拆几个、怎么命名、判定标准怎么写）
 - `references/guide-script-spec.md` — 引导脚本设计规范
 - `references/hook-spec.md` — hook 设计规范（**含三家官方文档地址、实时查询流程、三个必验的坑**）
-- `references/hooks-ref/` — 三家 hook 文档的**本地快照**（2026-09-14 抓取），官网不通时兜底
+- `references/hooks-ref/` — hook 官方文档的**自建快照目录**（初始为空+说明：自行抓取存入，断网兜底）
 - `references/note-format.md` — 沉淀笔记格式（OKF + 闪念/原子笔记思路）
 - `references/okf-spec.md` — **OKF 时效性规范**（三字段生命周期/必标内容清单/创建带消费查/复核清单模式）
 - `references/cases/` — 已沉淀的生产案例
