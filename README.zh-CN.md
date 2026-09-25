@@ -146,7 +146,8 @@ skillforge/
 ├── skillforge/                      # ← skill 本体，复制到你的 skills 目录
 │   ├── SKILL.md                     # 主流程（五阶段）
 │   ├── scripts/
-│   │   └── skill_guide.py           # 引导脚本（零依赖、只读、零参数）
+│   │   ├── skill_guide.py           # 引导脚本（零依赖、只读、零参数）
+│   │   └── validate_skill.py        # 交付前校验（零依赖）
 │   ├── references/
 │   │   ├── stage-design.md          # 状态拆解方法论（状态三条件、五要素）
 │   │   ├── guide-script-spec.md     # 引导脚本设计规范
