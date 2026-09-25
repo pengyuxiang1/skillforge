@@ -245,7 +245,7 @@ skillforge/
 ## 相关阅读
 
 - 机制的来源与论证：从 [openspec](https://github.com/Fission-AI/OpenSpec) 的源码中抽象——引导现场拉取、校验落在产物、判定可机器校验
-- 同名公众号文章：《写给 AI 的规矩，越写越没用》
+- 配套公众号文章：[《一文讲透：怎么从 openspec 蒸馏出通用的超级 skill》](https://mp.weixin.qq.com/s/rzirIqbdM-SM01zxMIxFlg)——本文方法论的完整叙事：openspec 三机制 → 蒸馏三件套 → 问题定位实验 → skillforge 开源
 
 ## License
 

@@ -245,7 +245,7 @@ Use the bundled installer (21 common agents — `--list-agents` to see them), or
 ## Related reading
 
 - Where the mechanics come from: abstracted from the [openspec](https://github.com/Fission-AI/OpenSpec) source — instructions computed on the spot, validation on artifacts, machine-checkable criteria
-- Companion article (Chinese): 《写给 AI 的规矩，越写越没用》
+- Companion article (Chinese): [《一文讲透：怎么从 openspec 蒸馏出通用的超级 skill》](https://mp.weixin.qq.com/s/rzirIqbdM-SM01zxMIxFlg) — the full story behind this repo: three openspec mechanisms → distilled into the three-part toolkit → validated on incident diagnosis → open-sourced as skillforge
 
 ## License
 
