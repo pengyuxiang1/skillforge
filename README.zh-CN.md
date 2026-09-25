@@ -153,7 +153,7 @@ skillforge/
 │   │   ├── guide-script-spec.md     # 引导脚本设计规范
 │   │   ├── hook-spec.md             # 门禁设计规范（含三个必验的坑）
 │   │   ├── note-format.md           # 案例沉淀格式
-│   │   ├── hooks-ref/               # 三家 Agent hook 官方文档快照
+│   │   ├── hooks-ref/               # hook 文档自建快照目录（自行抓取）
 │   │   └── cases/                   # 生产案例库（越用越厚）
 │   └── assets/
 │       └── skill-skeleton.md        # skill 骨架模板
@@ -196,7 +196,7 @@ skillforge/
 **两点要注意：**
 
 1. **门禁 hook 只在支持 hooks 的 Agent 上生效**（CodeBuddy / Claude Code / Cline / Kiro CLI，其余以官方文档为准）。不支持 hooks 的 Agent 仍能获得状态文件和引导脚本——三件套里的两件，收益已经拿到大半。
-2. **Hook 语法各家不通用**，照搬会静默失效。写门禁前先查目标 Agent 的官方文档——`references/hooks-ref/` 里有三家文档的本地快照兜底。
+2. **Hook 语法各家不通用**，照搬会静默失效。写门禁前先查目标 Agent 的官方文档——`references/hooks-ref/` 可存你自建的文档快照兜底。
 
 ---
 

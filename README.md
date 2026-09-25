@@ -153,7 +153,7 @@ skillforge/
 │   │   ├── guide-script-spec.md     # guide script spec
 │   │   ├── hook-spec.md             # gate hook spec (incl. three must-verify pitfalls)
 │   │   ├── note-format.md           # case-study format
-│   │   ├── hooks-ref/               # local snapshots of 3 agents' hook docs
+│   │   ├── hooks-ref/               # self-built hook docs snapshots (fetch your own)
 │   │   └── cases/                   # case library (grows with use)
 │   └── assets/
 │       └── skill-skeleton.md        # skill skeleton template
@@ -196,7 +196,7 @@ An incident-diagnosis skill driven by a hypothesize–verify loop — and the be
 **Two caveats:**
 
 1. **Gate hooks only work on hook-capable agents** (CodeBuddy / Claude Code / Cline / Kiro CLI; check others' docs). Agents without hooks still get the state file and guide script — two of the three parts, most of the payoff.
-2. **Hook syntax is not portable across agents** — copy-pasting silently fails. Check the target agent's official docs first; `references/hooks-ref/` keeps local snapshots of three of them as a fallback.
+2. **Hook syntax is not portable across agents** — copy-pasting silently fails. Check the target agent's official docs first; `references/hooks-ref/` is where you keep your own fetched snapshots as a fallback.
 
 ---
 
