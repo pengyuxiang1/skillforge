@@ -299,17 +299,22 @@ skill 里**不要**建 `README.md` / `CHANGELOG.md` / `QUICK_REFERENCE.md` 之�
 | 中 | 伪代码 / 带参数的脚本 | 有偏好模式、允许变体 |
 | 低 | 具体脚本、少量参数 | 脆弱易错、必须按固定顺序 |
 
-### 交付前用官方脚本校验
+### 交付前校验（自带脚本，零依赖）
 
 ```bash
-python3 ~/.codebuddy/skills/skill-creator/scripts/quick_validate.py <skill目录>
+python3 scripts/validate_skill.py <skill目录>
 ```
 
-校验 frontmatter 规范（字段白名单 / name 格式 / description 长度与字符）。**必须通过才算完成**。
+校验基础规范：frontmatter 字段白名单 / name 格式 / description 长度与字符 / 体积提示。**必须通过才算完成**。
+
+> 本 skill 自包含——校验脚本在仓库内，无需额外安装官方 skill-creator。
+> 若本机恰好装了官方版，可交叉验证一次（更严格）：
+> `python3 ~/.codebuddy/skills/skill-creator/scripts/quick_validate.py <skill目录>`
 
 ## 与官方 skill-creator 的关系
 
-`~/.codebuddy/skills/skill-creator`（Anthropic 官方版）管**基础规范**（怎么写 SKILL.md、怎么打包），本 skill 管**进阶硬化**（状态机 / 引导脚本 / 门禁 hook）。两者互补——先用官方版掌握基础写法，再用本 skill 判断要不要硬化。
+- **本 skill 自包含**：基础规范（description 即触发 / 三级加载 / 资源三分法 / 自由度分级）已内置，校验用自带的 `scripts/validate_skill.py`（零依赖）。**只装本 skill 即可完成从创建到硬化的全流程。**
+- 官方版（Anthropic `skill-creator`）**可选**：需要脚手架（`init_skill.py`）或打包分发（`package_skill.py`）时再装；它的 `quick_validate.py` 可用于交叉验证。
 
 ## 最佳实践
 

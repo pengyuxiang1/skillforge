@@ -213,9 +213,11 @@ skillforge/
 
 ## FAQ
 
-**Q：它和官方的 skill-creator 有什么区别？**
+**Q：它和官方的 skill-creator 有什么区别？需要都装吗？**
 
-官方 skill-creator 管基础规范（怎么写 SKILL.md、怎么打包）；skillforge 管进阶硬化（状态机、引导脚本、门禁 hook）。两者互补：先用官方版掌握基础写法，再用 skillforge 判断值不值得硬化。
+**不用都装。**skillforge 自包含：基础规范（description 即触发、三级加载、资源三分法）已内置，交付前校验用自带的 `scripts/validate_skill.py`（零依赖）——只装它就能完成从创建到硬化的全流程。
+
+官方 skill-creator 可选：需要脚手架（`init_skill.py`）或打包分发（`package_skill.py`）时再装，也可用它的 `quick_validate.py` 做更严格的交叉验证。
 
 **Q：支持中文吗？**
 

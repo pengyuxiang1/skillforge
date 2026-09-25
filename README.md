@@ -146,7 +146,8 @@ skillforge/
 ├── skillforge/                      # ← the skill itself; copy into your skills dir
 │   ├── SKILL.md                     # main flow (five stages)
 │   ├── scripts/
-│   │   └── skill_guide.py           # guide script (zero-dependency, read-only)
+│   │   ├── skill_guide.py           # guide script (zero-dependency, read-only)
+│   │   └── validate_skill.py        # pre-delivery validator (zero-dependency)
 │   ├── references/
 │   │   ├── stage-design.md          # state decomposition methodology
 │   │   ├── guide-script-spec.md     # guide script spec
@@ -213,9 +214,11 @@ An incident-diagnosis skill driven by a hypothesize–verify loop — and the be
 
 ## FAQ
 
-**Q: How is this different from the official skill-creator?**
+**Q: How is this different from the official skill-creator? Do I need both?**
 
-The official skill-creator covers the basics (how to write a SKILL.md, how to package). skillforge covers advanced hardening (state machines, guide scripts, gate hooks). They complement each other: start with the official one, then use skillforge to decide whether hardening is worth it.
+**No — skillforge is self-contained.** The basics (description-as-trigger, progressive disclosure, resource split) are built in, and validation ships as `scripts/validate_skill.py` (zero-dependency). One install covers the whole path from creating to hardening.
+
+The official skill-creator is optional: install it when you need scaffolding (`init_skill.py`) or packaging (`package_skill.py`), or use its `quick_validate.py` for stricter cross-checking.
 
 **Q: Does it work with non-English workflows?**
 
